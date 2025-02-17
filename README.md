@@ -68,10 +68,6 @@ driver({ browser: "chrome" })
     ];
   })
   .catch((error) => console.log(error));
-
-
-
-
 ```
 
 ## Drowser Studio
