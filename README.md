@@ -68,34 +68,13 @@ driver({ browser: "chrome" })
     ];
   })
   .catch((error) => console.log(error));
-
-driver({ browser: "firefox" })
-  .then(({ service }) => {
-    service.cases = [
-      {
-        name: "Verify Failed Title",
-        fn: async ({ builder, assert }) => {
-          const title = await builder.getTitle();
-          assert.assertEquals(title, "Drowsers");
-        },
-      },
-      {
-        name: "Verify Title",
-        fn: async ({ builder, assert }) => {
-          const title = await builder.getTitle();
-          assert.assertEquals(title, "Drowser");
-        },
-      },
-    ];
-  })
-  .catch((error) => console.log(error));
 ```
 
 ## Drowser Studio
 
 > Note: The `Drowser Studio` is a community-driven project and is open-source.
 
-Each test case is saved inside the `drowser-reports.json` file , and this file is exploitable inside the `Drowser Studio` who is developed by the `Kinotio` Team in this [repo](https://github.com/kinotio/drowser-studio) , who is open-source
+Each test case is saved inside the `drowser-reports.json` file , and this file is exploitable inside the `Drowser Studio` who is developed by the `Kinotio` Team in this [here](https://drowser.kinotio.io) , who is Sass platform to visualize all the metrics of the test cases.
 
 Import this reports inside of the studio to visualize all the metrics for main cases or each test case
 
@@ -105,7 +84,7 @@ The `drowser-reports.json` file provides a comprehensive overview of the test ex
 
 You can import the `drowser-reports.json` file into the [Drowser Studio](https://drowser.kinotio.io/) to visualize and analyze the metrics for each test case. This helps in identifying issues, understanding test coverage, and improving the overall quality of your test suite.
 
-For more details on how to use [Drowser Studio](https://drowser.kinotio.io/), refer to the [Drowser Studio Repository](https://github.com/kinotio/drowser-studio).
+For more details on how to use [Drowser Studio](https://drowser.kinotio.io/).
 
 ### Report Structure
 
