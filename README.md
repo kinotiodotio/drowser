@@ -13,7 +13,8 @@
 
 A easy way to implement and write Selenium with TypeScript using Deno 🦕
 
-> Note: This project is under development and is not yet ready for production use. Please use it with caution and report any issues or bugs you encounter.
+> [!WARNING]
+> Note: 🚧 This project is under development and is not yet ready for production use. Please use it with cautio and report any issues or bugs you encounter.
 
 ## Features
 
