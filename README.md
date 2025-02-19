@@ -13,6 +13,8 @@
 
 A easy way to implement and write Selenium with TypeScript using Deno 🦕
 
+> Note: This project is under development and is not yet ready for production use. Please use it with caution and report any issues or bugs you encounter.
+
 ## Features
 
 - Easy handling on driver side web browser to isolate each test ✅.
@@ -43,12 +45,14 @@ deno install --allow-scripts
 
 In the test file, define a sample test like this:
 
-With this test, we only test this sample code inside a Chrome, Firefox but create a test for another web browser like Edge, Safari 🚀
+This sample test will open the browser and check the title of the page, if the title is not equal to "Drowser" the test will fail.
+
+`safari` is the default browser, but you can change it to `chrome` or `firefox`.
 
 ```ts
 import { driver } from "https://deno.land/x/drowser@v0.1.6/mod.ts";
 
-driver({ browser: "chrome" })
+driver({ browser: "safari" })
   .then(({ service }) => {
     service.cases = [
       {
