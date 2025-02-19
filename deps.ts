@@ -1,4 +1,3 @@
-// @deno-types="npm:@types/selenium-webdriver@^4.1.22"
 import { Browser, Builder, By } from 'npm:selenium-webdriver@4.19.0'
 import type {
 	By as TBy,
