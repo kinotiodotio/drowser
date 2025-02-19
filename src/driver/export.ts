@@ -6,7 +6,7 @@ import {
 	readJsonSync,
 	writeJson,
 	writeJsonSync,
-} from '../deps.ts'
+} from '../../deps.ts'
 import {
 	generateFileName,
 	getAverageDuration,
@@ -14,7 +14,7 @@ import {
 	getCurrentMonth,
 	getFlaky,
 	updateOrCreate,
-} from './utils.ts'
+} from '../utils.ts'
 import {
 	DataPoint,
 	DataResult,
@@ -22,7 +22,7 @@ import {
 	MonthCount,
 	MonthValue,
 	ReportSchema,
-} from './types.ts'
+} from '../types.ts'
 
 const exportGeneratedLog = (
 	{ results }: { results: Array<DataResult> },
@@ -40,8 +40,7 @@ const exportGeneratedLog = (
 
 		const writeResult = () =>
 			results.forEach((r) => {
-				const logRow =
-					`[${r.timestamp}] - Test with ${r.name} is ${r.status}`
+				const logRow = `[${r.timestamp}] - Test with ${r.name} is ${r.status}`
 				Deno.writeTextFile(logFilePath, `${logRow}\n`, { append: true })
 			})
 
@@ -84,12 +83,11 @@ const exportJSONReport = (
 			}
 		}
 
-		const flatedTotalTests =
-			jsonData.drowser.metadata.current_month === month
-				? jsonData.drowser.cases.flatMap((item) => item.cases).filter((
-					c,
-				) => c.month_of_test === month)
-				: []
+		const flatedTotalTests = jsonData.drowser.metadata.current_month === month
+			? jsonData.drowser.cases.flatMap((item) => item.cases).filter((
+				c,
+			) => c.month_of_test === month)
+			: []
 		const totalTests = [
 			...flatedTotalTests,
 			...results,

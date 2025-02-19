@@ -2,5 +2,6 @@ dist/
 .DS_Store
 .env
 drowser
+drowser.json
 drowser-reports.json
 /node_modules
